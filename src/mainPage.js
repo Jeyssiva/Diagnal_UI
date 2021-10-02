@@ -43,7 +43,7 @@ function MainPage({classes, movieNames, movies}) {
             <CardContent class= {'p-px'}>
                 <StickyHeader>
                   <div class= 'w-screen h-8 mt-2 flex flex-row'>       
-                    <img src='/Slices/Back.png' class = "w-8 mr-4" alt='Back'/>
+                    <img src='./slices/back.png' class = "w-8 mr-4" alt='Back'/>
                     {
                       searching ?
                       <Autocomplete
@@ -64,7 +64,7 @@ function MainPage({classes, movieNames, movies}) {
                     : <span class="font-normal text-white text-lg mr-32">Romantic Comedy</span>
                     }
                     
-                    <img src='/Slices/search.png' class = 'w-8' alt='Search' onClick={onHandleSearch}/>
+                    <img src='./slices/search.png' class = 'w-8' alt='Search' onClick={onHandleSearch}/>
                   </div>
                 </StickyHeader>
                 <MovieList movies= {filterMovies}/>

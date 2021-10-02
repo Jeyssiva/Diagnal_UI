@@ -24,7 +24,7 @@ function MovieList({
     updatePage}) {
 
     useEffect(() => {
-      fetch(`/API/CONTENTLISTINGPAGE-PAGE${page}.json`)
+      fetch(`./api/contentpage${page}.json`)
       .then(response => response.json())
       .then(data => {
         fetchMovieList(data.page)
@@ -52,8 +52,8 @@ function MovieList({
                   movies.map((movie,i) => ( 
                   <div class="inline-block pl-2 w-34 h-40 " key = {`main_${movie['poster-image']}_${i}}`}>
                       <div class="bg-black overflow-hidden py-2" key={`${movie['poster-image']}_${i}`}>
-                          <img data-src={`/Slices/${movie['poster-image']}`}  onError={(e)=>{e.target.onerror = null; e.target.src="/Slices/placeholder_for_missing_posters.png"}}
-                          src= {`/Slices/${movie['poster-image']}`} 
+                          <img data-src={`./slices/${movie['poster-image']}`}  onError={(e)=>{e.target.onerror = null; e.target.src="./slices/placeholder_for_missing_posters.png"}}
+                          src= {`./slices/${movie['poster-image']}`} 
                           class="image-lazy w-34 h-40" alt={movie.name}/>
                           <div class="pr-2 pb-2 pt-2">
                               <span class="text-left text-white font-light" title = {`${movie.name}`}>{breakWord(movie.name)}</span>
